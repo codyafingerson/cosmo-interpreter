@@ -1,14 +1,16 @@
-# Cosmo Interpreter
+# Cosmo Interpreter 🚀✨
 
-Cosmo is a simple interpreter that I developed from scratch as a personal learning project. Built without following any tutorials, Cosmo was my exploration into the fundamentals of interpreter design and programming language implementation. While it doesn't serve a specific practical purpose, creating Cosmo was a fun and educational experience that deepened my understanding of how interpreters work under the hood.
+Cosmo is the interpreter absolutely no one asked for, but I built it anyway! Crafted from scratch, Cosmo was my grand adventure into the mysterious realm of interpreter design and programming language implementation. Does it serve a practical purpose? Absolutely not. But creating Cosmo was a blast and taught me more about interpreters than I ever thought I'd know.
+
+Why I chose TypeScript is beyond me, but here we are, lmao!
 
 ## Features
 - Custom Syntax: Cosmo utilizes a unique syntax that I designed, supporting basic computational operations.
 - Lexer and Parser: Implements a basic lexer and parser to process the custom language syntax.
 - Execution Engine: Interprets parsed code and executes instructions accordingly.
 
-## Getting Started
-1. Clone the Repository: Download or clone the Cosmo repository to your local machine.
+## Conclusion
+Cosmo may not revolutionize technology as we know it, but it sure made my coding journey more interesting. It's proof that with a bit of determination (and a disregard for sanity), you can create something uniquely your own—even if it serves absolutely no practical purpose.
 
 ## Grammar (EBNF)
 Below is the EBNF tree of the Cosmo Interpreter
