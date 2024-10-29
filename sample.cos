@@ -1,0 +1,84 @@
+// Variable declaration and arithmetic expressions
+create x = 10;
+create y = 5;
+create z = x * y + (x - y);
+
+// Output expressions and variable values
+output "The value of x is: " + x;
+output "The value of y is: " + y;
+output "The result of z = x * y + (x - y) is: " + z;
+
+// Function declaration and function call
+func add(a, b) {
+    return a + b;
+}
+
+func square(n) {
+    return n * n;
+}
+
+// Calling functions with output
+output "Calling add(3, 4): " + add(3, 4);
+output "Calling square(5): " + square(5);
+
+// Conditional statements
+if (x > y) {
+    output "x is greater than y";
+} else {
+    output "y is greater than or equal to x";
+}
+
+// Nested conditional with arithmetic and equality checks
+if (add(x, y) == z) {
+    output "The sum of x and y equals z";
+} else {
+    output "The sum of x and y does not equal z";
+}
+
+// Loop example: for loop
+create sum = 0;
+for (create i = 1; i <= 5; i = i + 1) {
+    sum = sum + i;
+    output "Current sum in loop is: " + sum;
+}
+
+output "Final sum after loop is: " + sum;
+
+// Using while loop
+create counter = 1;
+while (counter <= 3) {
+    output "Counter in while loop: " + counter;
+    counter = counter + 1;
+}
+
+// Using logical operators (AND, OR)
+if ((x > 0) and (y > 0)) {
+    output "Both x and y are positive";
+}
+
+if ((x < 0) or (y < 0)) {
+    output "Either x or y is negative";
+} else {
+    output "Neither x nor y is negative";
+}
+
+// Unary expressions
+output "Negative of x: " + (-x);
+output "Boolean negation of true: " + (!true);
+
+// Function with nested if and loop
+func factorial(n) {
+    if (n <= 1) {
+        return 1;
+    } else {
+        create result = 1;
+        
+        for (create i = n; i > 1; i = i - 1) {
+            result = result * i;
+        }
+
+        return result;
+    }
+}
+
+output "Factorial of 5 is: " + factorial(5);
