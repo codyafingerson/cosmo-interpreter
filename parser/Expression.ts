@@ -1,7 +1,14 @@
 import type { Token } from "../scanner/Token";
 
-export abstract class Expression {}
+/**
+ * An expression represents a value in the language.
+ * @abstract
+ */
+export abstract class Expression { }
 
+/**
+ * An assignment expression, such as `a = 1`.
+ */
 export class Assign extends Expression {
     public name: Token;
     public value: Expression;
@@ -17,6 +24,9 @@ export class Assign extends Expression {
     }
 }
 
+/**
+ * Represents a binary expression, such as addition, subtraction, multiplication, or division.
+ */
 export class Binary extends Expression {
     public left: Expression;
     public operator: Token;
@@ -34,6 +44,9 @@ export class Binary extends Expression {
     }
 }
 
+/**
+ * Represents a grouping expression, such as `(1 + 2)`.
+ */
 export class Grouping extends Expression {
     public expression: Expression;
 
@@ -47,6 +60,9 @@ export class Grouping extends Expression {
     }
 }
 
+/**
+ * Represents a literal expression, such as `1`, `2.5`, or `"hello"`.
+ */
 export class Literal extends Expression {
     public value: any;
 
@@ -60,6 +76,9 @@ export class Literal extends Expression {
     }
 }
 
+/**
+ * Represents a unary expression, such as `-1` or `!true`.
+ */
 export class Unary extends Expression {
     public operator: Token;
     public right: Expression;
@@ -75,6 +94,9 @@ export class Unary extends Expression {
     }
 }
 
+/**
+ * Represents a variable expression, such as `a`.
+ */
 export class Variable extends Expression {
     public name: Token;
 
@@ -85,5 +107,57 @@ export class Variable extends Expression {
 
     public toString(): string {
         return `Variable { name: ${this.name} }`;
+    }
+}
+
+/**
+ * Represents a logical expression, like `true and false`.
+ */
+export class FunctionCall extends Expression {
+    public callee: Expression;
+    public paren: Token;
+    public args: Expression[];
+
+    constructor(callee: Expression, paren: Token, args: Expression[]) {
+        super();
+        this.callee = callee;
+        this.paren = paren;
+        this.args = args;
+    }
+}
+
+/**
+ * A function expression
+ */
+export class CallExpression extends Expression {
+    public callee: Expression;
+    public paren: Token;
+    public args: Expression[];
+
+    constructor(callee: Expression, paren: Token, args: Expression[]) {
+        super();
+        this.callee = callee;
+        this.paren = paren;
+        this.args = args;
+    }
+
+    public toString(): string {
+        return `CallExpression { callee: ${this.callee}, paren: ${this.paren}, args: ${this.args} }`;
+    }
+}
+
+/**
+ * Represents a logical operator like `and` or `or`.
+ */
+export class LogicalExpression extends Expression {
+    public left: Expression;
+    public operator: Token;
+    public right: Expression;
+
+    constructor(left: Expression, operator: Token, right: Expression) {
+        super();
+        this.left = left;
+        this.operator = operator;
+        this.right = right;
     }
 }
