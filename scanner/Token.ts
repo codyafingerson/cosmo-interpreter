@@ -42,6 +42,9 @@ export enum TokenType {
     EOF = 'End of File'
 }
 
+/**
+ * Represents a token in the source code.
+ */
 export class Token {
     type: TokenType;
     lexeme: string;
