@@ -1,5 +1,9 @@
 import { TokenType, Token } from './Token';
 
+/**
+ * A scanner utility that reads the source code and converts it into a list of tokens.
+ * @class
+ */
 export class Scanner {
     private source: string;
     private tokens: Token[] = [];
@@ -27,6 +31,10 @@ export class Scanner {
         this.source = source;
     }
 
+    /**
+     * Scans the source code and returns a list of tokens.
+     * @returns {Token[]} The list of tokens found in the source code.
+     */
     public scanTokens(): Token[] {
         while (!this.isAtEnd()) {
             this.start = this.current;
