@@ -2,6 +2,10 @@
   "name": "cosmo-interpreter",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "sample": "bun run cli.ts --file sample.cos",
+    "build": "bun build --entrypoints ./cli.ts --outdir ./build --target bun"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
