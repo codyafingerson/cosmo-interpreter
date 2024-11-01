@@ -41,7 +41,7 @@ statement           ::= expression_statement
 
 expression_statement ::= expression ";";
 
-output_statement    ::= "output" expression ";";
+output_statement ::= 'output' '(' expression ')' ';'
 
 if_statement        ::= "if" "(" expression ")" block [ "else" block ];
 
