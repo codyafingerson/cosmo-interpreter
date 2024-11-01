@@ -24,7 +24,7 @@ export class Scanner {
         'return': TokenType.RETURN,
         'true': TokenType.TRUE,
         'create': TokenType.CREATE,
-        'while': TokenType.WHILE,
+        'while': TokenType.WHILE
     };
 
     constructor(source: string) {

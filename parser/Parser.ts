@@ -161,8 +161,10 @@ export class Parser {
     }    
 
     private outputStatement(): Statement {
+        this.consume(TokenType.LEFT_PAREN, "Expect '(' after 'output'");
         const value = this.expression();
-        this.consume(TokenType.SEMICOLON, "Expect ';' after value.");
+        this.consume(TokenType.RIGHT_PAREN, "Expect ')' after value");
+        this.consume(TokenType.SEMICOLON, "Expect ';' after output statement");
         return new OutputStatement(value);
     }
 
